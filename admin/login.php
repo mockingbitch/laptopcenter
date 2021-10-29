@@ -1,10 +1,14 @@
 <?php
+
 include '../classes/adminlogin.php';
 $login = new adminlogin();
 if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['login'])){
     $username = $_POST['username'];
     $password = md5($_POST['password']);
     $adlogin = $login->login_admin($username,$password);
+}
+if (isset($_SESSION['login'])){
+    header('location:index.php');
 }
 ?>
 <!DOCTYPE html>

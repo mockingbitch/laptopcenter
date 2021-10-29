@@ -43,9 +43,9 @@
                                     <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="/chitietsanpham.php?id=<?=$result_sp['idsanpham']; ?>">
-                                                    <img class="default-img" src="../admin/uploads/<?php echo $result_sp['hinhanh']; ?>" alt="#">
-                                                    <img class="hover-img" src="../admin/uploads/<?php echo $result_sp['hinhanh']; ?>" alt="#">
+                                                <a href="chitietsanpham.php?id=<?=$result_sp['idsanpham']; ?>">
+                                                    <img class="default-img" src="admin/uploads/<?php echo $result_sp['hinhanh']; ?>" alt="#">
+                                                    <img class="hover-img" src="admin/uploads/<?php echo $result_sp['hinhanh']; ?>" alt="#">
                                                 </a>
                                                 <div class="button-head">
                                                     <div class="product-action">
@@ -54,12 +54,12 @@
                                                         <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
                                                     </div>
                                                     <div class="product-action-2">
-                                                        <a title="Add to cart" href="#">Add to cart</a>
+                                                        <a title="Add to cart" onclick="addCart(<?php echo $result_sp['idsanpham'] ?>)">Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="product-content">
-                                                <h3><a href="/chitietsanpham.php?id=<?php echo $result_sp['idsanpham']; ?>"><?php echo $result_sp['tensanpham']; ?></a></h3>
+                                                <h3><a href="chitietsanpham.php?id=<?php echo $result_sp['idsanpham']; ?>"><?php echo $result_sp['tensanpham']; ?></a></h3>
                                                 <div class="product-price">
                                                     <span><?php echo $result_sp['gia']; ?></span>
                                                 </div>
@@ -87,9 +87,9 @@
                                     <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="/chitietsanpham.php?id=<?= $result_sphot['idsanpham']; ?>">
-                                                    <img class="default-img" src="../admin/uploads/<?php echo $result_sphot['hinhanh']; ?>" alt="#">
-                                                    <img class="hover-img" src="../admin/uploads/<?php echo $result_sphot['hinhanh']; ?>" alt="#">
+                                                <a href="chitietsanpham.php?id=<?= $result_sphot['idsanpham']; ?>">
+                                                    <img class="default-img" src="admin/uploads/<?php echo $result_sphot['hinhanh']; ?>" alt="#">
+                                                    <img class="hover-img" src="admin/uploads/<?php echo $result_sphot['hinhanh']; ?>" alt="#">
                                                 </a>
                                                 <div class="button-head">
                                                     <div class="product-action">
@@ -98,7 +98,7 @@
                                                         <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
                                                     </div>
                                                     <div class="product-action-2">
-                                                        <a title="Add to cart" href="#">Add to cart</a>
+                                                        <a title="Add to cart" onclick="addCart(<?php echo $result_sphot['idsanpham'] ?>)" href="#">Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,9 +146,9 @@
                     ?>
                     <div class="single-product">
                         <div class="product-img">
-                            <a href="/chitietsanpham.php?id=<?= $result_sphot['idsanpham']; ?>">
-                                <img class="default-img" src="/admin/uploads/<?= $result_sphot['hinhanh']; ?>" alt="#">
-                                <img class="hover-img" src="/admin/uploads/<?= $result_sphot['hinhanh']; ?>" alt="#">
+                            <a href="chitietsanpham.php?id=<?= $result_sphot['idsanpham']; ?>">
+                                <img class="default-img" src="admin/uploads/<?= $result_sphot['hinhanh']; ?>" alt="#">
+                                <img class="hover-img" src="admin/uploads/<?= $result_sphot['hinhanh']; ?>" alt="#">
                                 <span class="out-of-stock">Hot</span>
                             </a>
                             <div class="button-head">
@@ -158,7 +158,7 @@
                                     <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
                                 </div>
                                 <div class="product-action-2">
-                                    <a title="Add to cart" href="#">Add to cart</a>
+                                    <a title="Add to cart" onclick="addCart(<?php echo $result_sphot['idsanpham'] ?>)" href="">Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>

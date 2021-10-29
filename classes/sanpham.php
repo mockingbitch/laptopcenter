@@ -151,5 +151,10 @@ class sanpham
         $result = $this->db->select($query);
         return $result;
     }
+    public function search_sanpham($textsearh){
+        $query = "SELECT * FROM tbl_sanpham WHERE tensanpham LIKE '%$textsearh%' ORDER BY idsanpham DESC";
+        $result = $this->db->select($query);
+        return $result;
+    }
 }
 ?>

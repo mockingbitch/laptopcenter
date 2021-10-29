@@ -157,7 +157,20 @@
     </div>
 </footer>
 <!-- /End Footer Area -->
-
+<script>
+    function addCart(productid){
+        $.post("shoppingcart.php",{'productid':productid},function (data,status){
+            alert('Đã thêm vào giỏ hàng');
+            $("#listcart").load("http://localhost/laptopcenter/ .cart");
+        });
+    }
+    function removeCart(id){
+        $.post('updatecart.php',{'id':id,'num':0},function(data){
+            $("#listcart").load("http://localhost/shoes/ .cart");
+            $(".total-amount").load("http://localhost/shoes/viewcart.php .total");
+        });
+    }
+</script>
 <!-- Jquery -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.0.js"></script>

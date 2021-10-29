@@ -46,5 +46,30 @@ class user
             }
         }
     }
+    public function register_user($email,$password,$repassword,$hoten){
+        $email = $this->fm->validation($email);
+        $password = $this->fm->validation($password);
+        $hoten = $this->fm->validation($hoten);
+        $repassword = $this->fm->validation($repassword);
+        $email = mysqli_real_escape_string($this->db->link, $email);
+        $password = mysqli_real_escape_string($this->db->link, $password);
+        $hoten = mysqli_real_escape_string($this->db->link, $hoten);
+        $repassword = mysqli_real_escape_string($this->db->link, $repassword);
+        if (empty($email)||empty($hoten)||empty($repassword)||empty($password)){
+            $alert = "<span style='color: red'>* Không được bỏ trống thông tin!!!</span>";
+            return $alert;
+        }elseif($password!=$repassword){
+            $alert = "<span style='color: red'>* Vui lòng xác nhận lại mật khẩu!!!</span>";
+            return $alert;
+        }
+        else{
+            $query = "INSERT INTO tbl_customer(customerEmail,customerName,password) VALUES ('$email','$hoten','$password')";
+            $result = $this->db->insert($query);
+            if ($result){
+                $alert = "<span style='color: green'>Đăng ký tài khoản thành công. <a href='dangnhap.php'>Đăng nhập ngay!!!</a></span>";
+                return $alert;
+            }
+        }
+    }
 }
 ?>
