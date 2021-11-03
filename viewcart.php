@@ -64,12 +64,12 @@ include 'include/header.php';
                             <div class="left">
                                 <div class="coupon">
                                     <form action="#" target="_blank">
-                                        <input name="Coupon" placeholder="Enter Your Coupon">
-                                        <button class="btn">Apply</button>
+                                        <input name="Coupon" placeholder="Nhập mã giảm giá">
+                                        <button class="btn">Xác nhận</button>
                                     </form>
                                 </div>
                                 <div class="checkbox">
-                                    <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+10$)</label>
+                                    <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Giảm 10%</label>
                                 </div>
                             </div>
                         </div>

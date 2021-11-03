@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Sản phẩm đang nổi</h2>
+                    <h2>Sản phẩm mới</h2>
                 </div>
             </div>
         </div>
@@ -12,20 +12,20 @@
                 <div class="product-info">
                     <div class="nav-main">
                         <!-- Tab Nav -->
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <?php
-                                include 'classes/danhmuc.php';
-                                $danhmuc = new danhmuc();
-                                $show_danhmuc = $danhmuc->show_danhmuc();
-                                if($show_danhmuc){
-                                    while ($result = $show_danhmuc->fetch_assoc()){
-                            ?>
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab"><?php echo $result['tendanhmuc']; ?></a></li>
-                            <?php
-                                    }
-                                }
-                            ?>
-                        </ul>
+<!--                        <ul class="nav nav-tabs" id="myTab" role="tablist">-->
+<!--                            --><?php
+//                                include 'classes/danhmuc.php';
+//                                $danhmuc = new danhmuc();
+//                                $show_danhmuc = $danhmuc->show_danhmuc();
+//                                if($show_danhmuc){
+//                                    while ($result = $show_danhmuc->fetch_assoc()){
+//                            ?>
+<!--                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">--><?php //echo $result['tendanhmuc']; ?><!--</a></li>-->
+<!--                            --><?php
+//                                    }
+//                                }
+//                            ?>
+<!--                        </ul>-->
                         <!--/ End Tab Nav -->
                     </div>
                     <div class="tab-content" id="myTabContent">
@@ -131,7 +131,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Hot Item</h2>
+                    <h2>Sản phẩm nổi bật</h2>
                 </div>
             </div>
         </div>

@@ -17,32 +17,32 @@ class cart
     public function add_to_cart($data){
         if (!isset($_SESSION['cart'])) $_SESSION['cart']=[];
         $id = $data['productid'];
-        $query = "SELECT * FROM tbl_product WHERE productid ='$id'";
+        $query = "SELECT * FROM tbl_sanpham WHERE idsanpham ='$id'";
         $value = $this->db->select($query);
         if ($value){
             $result = $value->fetch_assoc();
             if (isset($_SESSION['cart'])){
                 if(isset($_SESSION['cart'][$id])){
-                    $_SESSION['cart'][$id]['id'] = $result['productid'];
+                    $_SESSION['cart'][$id]['id'] = $result['idsanpham'];
                     $_SESSION['cart'][$id]['qty'] += 1;
-                    $_SESSION['cart'][$id]['name'] = $result['productName'];
-                    $_SESSION['cart'][$id]['price'] = $result['productPrice'];
-                    $_SESSION['cart'][$id]['img'] = $result['img'];
+                    $_SESSION['cart'][$id]['name'] = $result['tensanpham'];
+                    $_SESSION['cart'][$id]['price'] = $result['gia'];
+                    $_SESSION['cart'][$id]['img'] = $result['hinhanh'];
                 }
                 else{
                     $_SESSION['cart'][$id]['qty']=1;
-                    $_SESSION['cart'][$id]['name'] = $result['productName'];
-                    $_SESSION['cart'][$id]['price'] = $result['productPrice'];
-                    $_SESSION['cart'][$id]['img'] = $result['img'];
+                    $_SESSION['cart'][$id]['name'] = $result['tensanpham'];
+                    $_SESSION['cart'][$id]['price'] = $result['gia'];
+                    $_SESSION['cart'][$id]['img'] = $result['hinhanh'];
                 }
                 $_SESSION['success']='Thêm thành công';
 
             }
             else{
                 $_SESSION['cart'][$id]['qty']=1;
-                $_SESSION['cart'][$id]['name'] = $result['productName'];
-                $_SESSION['cart'][$id]['price'] = $result['productPrice'];
-                $_SESSION['cart'][$id]['img'] = $result['img'];
+                $_SESSION['cart'][$id]['name'] = $result['tensanpham'];
+                $_SESSION['cart'][$id]['price'] = $result['gia'];
+                $_SESSION['cart'][$id]['img'] = $result['hinhanh'];
                 $_SESSION['success']='Thêm thành công';
             }
 //            $value = $result->fetch_assoc();

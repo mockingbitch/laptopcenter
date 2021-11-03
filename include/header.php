@@ -3,6 +3,10 @@ include_once 'lib/session.php';
 //Session::checkSession();
 ob_start();
 session_start();
+if (isset($_GET['loggingout']) && $_GET['loggingout']=='true'){
+    Session::destroy();
+    header('location:index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -86,12 +90,12 @@ session_start();
                             <?php if (isset($_SESSION['customerlogin'])){
                                 ?>
                                 <li><i class="ti-user"></i> <a href="#"><?php echo $_SESSION['customername'] ?></a></li>
-                                <li><i class="ti-power-off"></i><a href="?loggingout=true.php">Đăng xuất</a></li>
+                                <li><i class="ti-power-off"></i><a onclick="return confirm('Bạn muốn đăng xuất?');" href="?loggingout=true">Đăng xuất</a></li>
                                 <?php
                             }else{
                                 ?>
                                 <!--                                <li><i class="ti-user"></i> <a href="#">Tài khoản</a></li>-->
-                                <li><i class="ti-power-off"></i><a href="loginuser.php">Đăng nhập</a></li>
+                                <li><i class="ti-power-off"></i><a href="dangnhap.php">Đăng nhập</a></li>
                                 <?php
                             }
                             ?>
@@ -132,9 +136,9 @@ session_start();
                         <div class="search-bar">
                             <select>
                                 <option selected="selected">Tất cả danh mục</option>
-                                <option>watch</option>
-                                <option>mobile</option>
-                                <option>kid’s item</option>
+<!--                                <option>watch</option>-->
+<!--                                <option>mobile</option>-->
+<!--                                <option>kid’s item</option>-->
                             </select>
                             <form method="GET">
                                 <input name="search" placeholder="Tìm kiếm...." type="search">
